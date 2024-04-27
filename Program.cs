@@ -6,7 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 var services = builder.Services;
 
-builder.Services.AddControllers().AddNewtonsoftJson();
+builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddCors(options =>
@@ -18,7 +18,7 @@ builder.Services.AddCors(options =>
 });
 
 services.AddDbContext<AppDbContext>(options =>
-options.UseMySql("server=localhost;port=3306;database=lxp;user=root;password=root", new MySqlServerVersion(new Version())));
+options.UseMySql("server=localhost;port=3306;database=lxp1;user=root;password=root", new MySqlServerVersion(new Version())));
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
